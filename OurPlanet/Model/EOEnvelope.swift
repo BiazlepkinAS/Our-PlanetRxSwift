@@ -4,10 +4,6 @@ extension CodingUserInfoKey {
   static let contentIdentifier = CodingUserInfoKey(rawValue: "contentIdentifier")!
 }
 
-// EOEnvelope is the generic envelope that EONET returns upon query
-// since the actual result is keyed and of a different type every time,
-// we use Decodable's userInfo to let the caller know what the expected key is
-
 struct EOEnvelope<Content: Decodable>: Decodable {
   
   let content: Content
